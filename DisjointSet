@@ -1,0 +1,45 @@
+#include <utility>
+#include <vector
+class DisjointSet {
+ private:
+  vector<int> parents;
+  vector<int> ranks;
+
+ public:
+    int count=size;
+  DisjointSet(int size) : parents(size), ranks(size)
+  {
+    for (int i = 0; i < size; i++) {
+      parents[i] = i;
+      ranks[i] = 0;
+    }
+  }
+
+ { int Find(x)
+   if x.parent != x
+     x.parent = Find(x.parent)
+ 
+    return x.parent
+ }
+
+
+
+void join(int x, int y)
+  {
+    int x_root = find(x);
+    int y_root = find(y);
+
+    if (x_root == y_root) {
+      return;
+    }
+        count --;
+    if (ranks[x_root] < ranks[y_root]) {
+      swap(x_root, y_root);
+    }
+    parents[y_root] = x_root;
+
+    if (ranks[x_root] == ranks[y_root]) {
+      ranks[x_root]++;
+    }
+  }
+};
